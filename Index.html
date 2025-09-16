@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gobernanza de Seguridad: Principios y Políticas (CISSP Dominio 1.0)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Calm Harmony (Slate, Indigo, Amber) -->
+    <!-- Application Structure Plan: A two-panel layout. The left panel is a fixed, numbered navigation menu providing a persistent outline of the class structure for easy tracking and navigation. The right panel displays the content for the selected section. This structure directly addresses the user's request for an easy-to-follow format. -->
+    <!-- Visualization & Content Choices: 5 Pillars -> Inform -> Interactive Cards (HTML/JS). Org Roles -> Organize -> Diagram (HTML/CSS). Frameworks -> Compare -> Grid Layout (HTML). Scenario -> Apply -> Story-based layout (HTML). All acronyms and key terms are kept in English as requested. The conclusion is replaced with an interactive quiz. CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        .section-fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-link.active {
+            background-color: #4f46e5;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .interactive-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .interactive-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .details-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .details-content.open {
+            max-height: 1000px;
+        }
+        .quiz-option {
+            transition: background-color 0.3s;
+        }
+        .quiz-feedback {
+            display: none;
+        }
+        .connector-line {
+            position: absolute;
+            background-color: #cbd5e1;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="min-h-screen flex flex-col md:flex-row">
+        <!-- Sidebar Navigation -->
+        <nav class="bg-slate-800 text-white w-full md:w-80 p-6 shrink-0">
+            <h1 class="text-2xl font-bold mb-2">CISSP Dominio 1.0</h1>
+            <p class="text-sm text-amber-300 mb-8">Gobernanza y Riesgos</p>
+            <ol class="space-y-2" id="navigation">
+                <li><a href="#intro" class="nav-link block w-full text-left px-4 py-2 rounded-md hover:bg-slate-700 transition-colors duration-200 active">1. Introducción y Visión General</a></li>
+                <li><a href="#fundamentos" class="nav-link block w-full text-left px-4 py-2 rounded-md hover:bg-slate-700 transition-colors duration-200">2. Fundamentos</a></li>
+                <li><a href="#conceptos" class="nav-link block w-full text-left px-4 py-2 rounded-md hover:bg-slate-700 transition-colors duration-200">3. Conceptos y Principios</a></li>
+                <li><a href="#gobernanza" class="nav-link block w-full text-left px-4 py-2 rounded-md hover:bg-slate-700 transition-colors duration-200">4. Principios de Gobernanza</a></li>
+                <li><a href="#due" class="nav-link block w-full text-left px-4 py-2 rounded-md hover:bg-slate-700 transition-colors duration-200">5. Due Diligence y Due Care</a></li>
+                <li><a href="#leyes" class="nav-link block w-full text-left px-4 py-2 rounded-md hover:bg-slate-700 transition-colors duration-200">6. Leyes, Regulaciones y Cumplimiento</a></li>
+                <li><a href="#bcp" class="nav-link block w-full text-left px-4 py-2 rounded-md hover:bg-slate-700 transition-colors duration-200">7. Business Continuity & Disaster Recovery</a></li>
+                <li><a href="#ejemplo" class="nav-link block w-full text-left px-4 py-2 rounded-md hover:bg-slate-700 transition-colors duration-200">8. Org Roles and Responsabilities</a></li>
+                <li><a href="#preguntas" class="nav-link block w-full text-left px-4 py-2 rounded-md hover:bg-slate-700 transition-colors duration-200">9. Preguntas de Repaso</a></li>
+                <li><a href="#test" class="nav-link block w-full text-left px-4 py-2 rounded-md hover:bg-slate-700 transition-colors duration-200">10. 20 Questions to Test</a></li>
+                <li><a href="#test2" class="nav-link block w-full text-left px-4 py-2 rounded-md hover:bg-slate-700 transition-colors duration-200">11. 30 Questions to Test DOM2</a></li>
+            </ol>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6 md:p-10 overflow-y-auto">
+            
+            <section id="intro" class="content-section section-fade-in">
+                <h2 class="text-4xl font-bold text-indigo-600 mb-4">1. Introducción y Visión General</h2>
+                <p class="text-lg text-slate-600 mb-6">
+                    Este capítulo, "Security Governance Through Principles and Policies," es fundamental porque aborda los elementos fundacionales de las soluciones de seguridad y sienta las bases para el Dominio 1.0: Security and Risk Management, que representa un 16% del examen.
+                </p>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-amber-500">
+                    <h3 class="text-xl font-semibold mb-2 text-amber-800">Clave para el Examen CISSP</h3>
+                    <p class="text-slate-700">Es crucial comprender que la seguridad es una <strong>herramienta de gestión empresarial</strong>, no solo una preocupación de TI. Su propósito principal es apoyar los objetivos, la misión y las metas de la organización. Una confusión común en el examen es enfocarse demasiado en los detalles técnicos sin alinear las soluciones de seguridad con la estrategia de negocio.</p>
+                </div>
+            </section>
+
+            <section id="fundamentos" class="content-section hidden section-fade-in">
+                <h2 class="text-4xl font-bold text-indigo-600 mb-4">2. Fundamentos</h2>
+                 <p class="text-lg text-slate-600 mb-6">
+                    La seguridad es esencial: asegura que una organización pueda existir y operar a pesar de los intentos de robar datos o comprometer elementos físicos o lógicos.
+                </p>
+                <h3 class="text-2xl font-semibold mb-4">Evaluación de la Seguridad</h3>
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm"><p><strong class="text-indigo-700">Risk Assessment:</strong> Identificación de activos, amenazas y vulnerabilidades para calcular el riesgo.</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm"><p><strong class="text-indigo-700">Vulnerability Assessment:</strong> Uso de herramientas automatizadas para localizar debilidades de seguridad conocidas.</p></div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm"><p><strong class="text-indigo-700">Penetration Testing:</strong> Puesta a prueba de la infraestructura de seguridad por equipos de confianza para encontrar problemas antes que los adversarios.</p></div>
+                </div>
+                 <div class="mt-6 p-4 bg-red-100 border-l-4 border-red-500 rounded-md">
+                    <p class="text-red-800"><strong class="font-bold">Punto Clave de Examen:</strong> Distinguir claramente estos métodos de evaluación es clave. La confusión a menudo reside en usarlos indistintamente, cuando cada uno tiene un propósito y alcance diferente.</p>
+                </div>
+            </section>
+            
+            <section id="conceptos" class="content-section hidden section-fade-in">
+                <h2 class="text-4xl font-bold text-indigo-600 mb-4">3. Conceptos y Principios</h2>
+                <p class="text-lg text-slate-600 mb-8">Estos son los pilares conceptuales sobre los que se construye toda la seguridad.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="text-center mb-8">
+                        <div class="p-4 bg-slate-700 text-white rounded-lg inline-block shadow-lg border-2 border-amber-400">
+                            <h4 class="text-2xl font-bold">Security</h4>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row justify-center items-start gap-8">
+                        <!-- CIA Branch -->
+                        <div class="w-full md:w-1/2 p-4 border-2 border-indigo-400 rounded-lg bg-indigo-50">
+                            <h5 class="text-center text-xl font-bold text-indigo-800 mb-4">CIA</h5>
+                            <ul class="space-y-3 text-left">
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Confidentiality:</strong> Prevenir la divulgación no autorizada de datos.</li>
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Integrity:</strong> Proteger los datos contra modificaciones no autorizadas.</li>
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Availability:</strong> Asegurar el acceso oportuno a los datos por usuarios autorizados.</li>
+                            </ul>
+                        </div>
+                        <!-- AAA Branch -->
+                        <div class="w-full md:w-1/2 p-4 border-2 border-amber-400 rounded-lg bg-amber-50">
+                             <h5 class="text-center text-xl font-bold text-amber-800 mb-4">AAA</h5>
+                             <ul class="space-y-3 text-left">
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Identification + Authentication:</strong> Declarar y verificar una identidad.</li>
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Authorization:</strong> Conceder permisos a una identidad verificada.</li>
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Auditing:</strong> Registrar las actividades de los sujetos.</li>
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Accounting:</strong> Hacer a los sujetos responsables de sus acciones.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="mt-8 pt-6 border-t border-slate-200">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-4">Más Allá de la Triada: Relevancia para el CISSP</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-slate-100 p-4 rounded-lg">
+                                <h4 class="font-bold text-amber-700">Authenticity</h4>
+                                <p class="text-sm text-slate-600 mt-2">Es crucial porque valida el origen de la información. En transacciones complejas, no basta con asegurar que los datos no se han filtrado (Confidentiality) o alterado (Integrity); debemos tener la certeza de que provienen de quien dice ser. Esto previene ataques de suplantación (spoofing) y es la base de la confianza en las interacciones digitales.</p>
+                            </div>
+                            <div class="bg-slate-100 p-4 rounded-lg">
+                                <h4 class="font-bold text-amber-700">Non-Repudiation</h4>
+                                <p class="text-sm text-slate-600 mt-2">Proporciona una prueba irrefutable de que una acción ocurrió. Se construye sobre los servicios de AAA (especialmente Auditing y Accounting). Para obligaciones legales, financieras y contractuales, es fundamental poder demostrar que un usuario específico realizó una acción y no puede negarlo. Esto es clave para la rendición de cuentas (accountability) y la resolución de disputas, una preocupación central desde la perspectiva de negocio y riesgos del CISSP.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gobernanza" class="content-section hidden section-fade-in">
+                <h2 class="text-4xl font-bold text-indigo-600 mb-4">4. Principios de Gobernanza</h2>
+                <p class="text-lg text-slate-600 mb-8">Aquí examinamos cómo la seguridad se integra en la dirección estratégica de la organización.</p>
+                <h3 class="text-2xl font-semibold mb-4">Roles y Responsabilidades Clave</h3>
+                <div class="bg-white p-8 rounded-lg shadow-md space-y-4">
+                    <div class="text-center p-4 bg-indigo-200 rounded-md"><p class="font-bold text-indigo-800 text-lg">Senior Manager</p><p class="text-sm text-indigo-700">Responsabilidad última. Aprueba políticas. Garantiza Due Diligence y Due Care.</p></div>
+                    <div class="grid md:grid-cols-2 gap-4 text-center">
+                        <div class="p-4 bg-slate-100 rounded-md"><p class="font-bold text-slate-800">Asset Owner</p><p class="text-sm text-slate-600">Máxima responsabilidad sobre los datos. Clasifica la información y define controles.</p></div>
+                        <div class="p-4 bg-slate-100 rounded-md"><p class="font-bold text-slate-800">Security Professional</p><p class="text-sm text-slate-600">Responsabilidad funcional. Redacta e implementa políticas. No toma decisiones finales.</p></div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-4 text-center">
+                        <div class="p-4 bg-amber-100 rounded-md"><p class="font-bold text-amber-800">Custodian</p><p class="text-sm text-amber-700">Implementa la protección prescrita (backups, parches). A menudo es personal de IT.</p></div>
+                        <div class="p-4 bg-amber-100 rounded-md"><p class="font-bold text-amber-800">User</p><p class="text-sm text-amber-700">Accede a los datos para sus tareas, siguiendo el principio de least privilege.</p></div>
+                        <div class="p-4 bg-amber-100 rounded-md"><p class="font-bold text-amber-800">Auditor</p><p class="text-sm text-amber-700">Revisa y verifica el cumplimiento de las políticas y la adecuación de los controles.</p></div>
+                    </div>
+                </div>
+                 <h3 class="text-2xl font-semibold mt-10 mb-4">Jerarquía de Documentos</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="relative p-4">
+                        <!-- Central Hub -->
+                        <div class="text-center mb-8">
+                            <div class="p-4 bg-slate-700 text-white rounded-lg inline-block shadow-lg">
+                                <h4 class="text-xl font-bold">SECURITY INFRASTRUCTURE</h4>
+                            </div>
+                        </div>
+
+                        <!-- Main Branches -->
+                        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-center relative">
+                            <!-- Policy -->
+                            <div class="flex flex-col items-center">
+                                <div class="z-10 p-4 bg-indigo-100 border-2 border-indigo-500 rounded-lg shadow w-full">
+                                    <h5 class="font-bold text-indigo-800">1. Policy</h5>
+                                    <p class="text-xs text-indigo-600">(Mandatory)</p>
+                                </div>
+                                <div class="w-0.5 h-8 bg-slate-300"></div>
+                                <div class="z-10 p-2 bg-amber-100 border border-amber-400 rounded-lg text-sm w-full">Strategic Plan</div>
+                            </div>
+                            <!-- Standards -->
+                            <div class="flex flex-col items-center">
+                                <div class="z-10 p-4 bg-indigo-100 border-2 border-indigo-500 rounded-lg shadow w-full">
+                                    <h5 class="font-bold text-indigo-800">2. Standards</h5>
+                                    <p class="text-xs text-indigo-600">(Mandatory)</p>
+                                </div>
+                                <div class="w-0.5 h-8 bg-slate-300"></div>
+                                <div class="z-10 p-2 bg-amber-100 border border-amber-400 rounded-lg text-sm w-full">Tactical Plan</div>
+                            </div>
+                            <!-- Baseline -->
+                            <div class="flex flex-col items-center">
+                                <div class="z-10 p-4 bg-slate-100 border-2 border-slate-400 rounded-lg shadow w-full">
+                                    <h5 class="font-bold text-slate-800">3. Baseline</h5>
+                                    <p class="text-xs text-slate-500">(Optional)</p>
+                                    <p class="text-xs mt-1">Minimum Security</p>
+                                </div>
+                            </div>
+                            <!-- Guidelines -->
+                            <div class="flex flex-col items-center">
+                                <div class="z-10 p-4 bg-slate-100 border-2 border-slate-400 rounded-lg shadow w-full">
+                                    <h5 class="font-bold text-slate-800">4. Guidelines</h5>
+                                    <p class="text-xs text-slate-500">(Optional)</p>
+                                    <p class="text-xs mt-1">Implementation Guide</p>
+                                </div>
+                            </div>
+                            <!-- Procedures -->
+                            <div class="flex flex-col items-center">
+                                <div class="z-10 p-4 bg-indigo-100 border-2 border-indigo-500 rounded-lg shadow w-full">
+                                    <h5 class="font-bold text-indigo-800">5. Procedures</h5>
+                                    <p class="text-xs text-indigo-600">(Mandatory)</p>
+                                    <p class="text-xs mt-1">System/SOP Specific</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Operational Plan -->
+                        <div class="mt-8 flex justify-center">
+                             <div class="relative w-3/5 text-center">
+                                <div class="connector-line top-0 left-1/2 -translate-x-1/2 w-0.5 h-8 bg-slate-300"></div>
+                                <div class="connector-line top-8 left-0 w-full h-0.5 bg-slate-300"></div>
+                                <div class="connector-line top-0 left-0 w-0.5 h-8 bg-slate-300"></div>
+                                <div class="connector-line top-0 right-0 w-0.5 h-8 bg-slate-300"></div>
+                                <div class="mt-8 z-10 p-2 bg-amber-100 border border-amber-400 rounded-lg text-sm inline-block">Operational Plan</div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="due" class="content-section hidden section-fade-in">
+                <h2 class="text-4xl font-bold text-indigo-600 mb-4">5. Due Diligence y Due Care</h2>
+                <p class="text-lg text-slate-600 mb-8">Conceptos legales y éticos fundamentales, definidos en el contexto de la seguridad.</p>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <div class="bg-red-100 text-red-800 p-4 rounded-lg">
+                        <h3 class="font-bold text-lg mb-2">Conceptos Clave</h3>
+                        <ul class="list-disc list-inside text-sm">
+                            <li><strong>Due Care:</strong> Es la protección responsable de los activos.</li>
+                            <li><strong>Due Diligence:</strong> Es la capacidad de probar el Due Care.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-xl font-semibold mb-2 text-indigo-700">Due Care</h4>
+                        <p class="font-semibold">Protección responsable de los activos, basada y alineada con las metas y objetivos de la organización.</p>
+                        <p class="text-sm text-slate-600 mt-2">Esta definición alinea lo que la seguridad debería estar haciendo con lo que la organización necesita. Es lo que "Due Care" significa desde una perspectiva de seguridad.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-xl font-semibold mb-2 text-indigo-700">Due Diligence</h4>
+                        <p class="font-semibold">La capacidad de probar el Due Care a las partes interesadas (alta gerencia, reguladores, clientes, etc.).</p>
+                        <p class="text-sm text-slate-600 mt-2">Due Diligence es lo que se hace para probar el Due Care de forma regular a las partes interesadas de la organización.</p>
+                    </div>
+                </div>
+                 <div class="mt-6 p-4 bg-red-100 border-l-4 border-red-500 rounded-md">
+                    <p class="text-red-800"><strong class="font-bold">Punto Clave de Examen:</strong> Una de las confusiones más comunes. La distinción entre <strong>planificar (diligence)</strong> y <strong>ejecutar (care)</strong> es crucial.</p>
+                </div>
+            </section>
+
+            <section id="leyes" class="content-section hidden section-fade-in">
+                <h2 class="text-4xl font-bold text-indigo-600 mb-4">6. Leyes, Regulaciones y Cumplimiento</h2>
+                <p class="text-lg text-slate-600 mb-8">Perspectiva sobre cómo las leyes gobiernan los problemas de seguridad.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <h3 class="text-2xl font-semibold text-slate-800 mb-4">Four Security Issues</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                        <div class="p-3 bg-red-100 border border-red-300 rounded-lg">Computer Crime</div>
+                        <div class="p-3 bg-red-100 border border-red-300 rounded-lg">Intellectual Property</div>
+                        <div class="p-3 bg-red-100 border border-red-300 rounded-lg">Data Privacy</div>
+                        <div class="p-3 bg-red-100 border border-red-300 rounded-lg">Software Licensing</div>
+                    </div>
+                    <div class="text-2xl text-slate-400 mb-4">↓</div>
+                    <p class="mb-4 text-slate-600">Para gobernar estos asuntos, tenemos <span class="p-2 bg-amber-200 rounded-md font-bold">LEYES</span></p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-8">
+                        <!-- Criminal Law -->
+                        <div class="p-4 bg-indigo-50 border-2 border-indigo-200 rounded-lg">
+                            <h4 class="font-bold text-lg text-indigo-800 mb-2">Criminal Law</h4>
+                            <p class="text-sm text-slate-600 mb-2"><strong>Involucra:</strong> 100% Federal + State Government</p>
+                            <ul class="text-left text-sm space-y-1 list-disc list-inside">
+                                <li>Computer Fraud</li>
+                                <li>Abuse Act</li>
+                                <li>Electronic Comms. Privacy Act</li>
+                                <li>Identity Theft</li>
+                                <li>Digital Millennium Copyright</li>
+                            </ul>
+                        </div>
+                        <!-- Civil Law -->
+                        <div class="p-4 bg-indigo-50 border-2 border-indigo-200 rounded-lg">
+                            <h4 class="font-bold text-lg text-indigo-800 mb-2">Civil Law</h4>
+                            <p class="text-sm text-slate-600 mb-2"><strong>Involucra:</strong> Mínima intervención del gobierno</p>
+                            <ul class="text-left text-sm space-y-1 list-disc list-inside">
+                                <li>Transacciones entre personas y organizaciones</li>
+                                <li>Trademark</li>
+                                <li>Patent Laws</li>
+                            </ul>
+                        </div>
+                        <!-- Administrative Law -->
+                        <div class="p-4 bg-indigo-50 border-2 border-indigo-200 rounded-lg">
+                            <h4 class="font-bold text-lg text-indigo-800 mb-2">Administrative Law</h4>
+                            <p class="text-sm text-slate-600 mb-2"><strong>Involucra:</strong> Government Agencies</p>
+                             <ul class="text-left text-sm space-y-1 list-disc list-inside">
+                                <li>Actividades del día a día</li>
+                                <li>HIPAA: Para industrias y tipos de datos específicos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded-md text-left">
+                        <p class="text-yellow-800"><strong class="font-bold">Nota:</strong> La superposición de leyes y las múltiples jurisdicciones a menudo generan confusión.</p>
+                    </div>
+                </div>
+                <div class="mt-10">
+                     <h3 class="text-2xl font-semibold mb-4">Marcos de Control de Seguridad Aplicables</h3>
+                     <p class="text-slate-600 text-center">NIST • COBIT • PCI DSS • ISO/IEC 27000 Series</p>
+                </div>
+            </section>
+            
+            <section id="bcp" class="content-section hidden section-fade-in">
+                <h2 class="text-4xl font-bold text-indigo-600 mb-4">7. Business Continuity & Disaster Recovery</h2>
+                <p class="text-lg text-slate-600 mb-8">Asegurar que el "show must go on" para la compañía, diferenciando el enfoque estratégico del negocio del táctico de TI.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="text-center mb-8">
+                        <div class="p-4 bg-slate-700 text-white rounded-lg inline-block shadow-lg">
+                            <h4 class="text-2xl font-bold">SHOW MUST GO ON</h4>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row justify-center items-start gap-8">
+                        <!-- BCP Branch -->
+                        <div class="w-full md:w-1/2 p-4 border-2 border-indigo-400 rounded-lg bg-indigo-50">
+                            <h5 class="text-center text-xl font-bold text-indigo-800 mb-4">BCP - Business Continuity Planning</h5>
+                            <ul class="space-y-3 text-left text-sm">
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Enfoque:</strong> Operaciones del Negocio</li>
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Nivel:</strong> Estratégico (Largo Plazo)</li>
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Perspectiva:</strong> Alto nivel, relacionado con la gestión de riesgos del negocio.</li>
+                            </ul>
+                        </div>
+                        <!-- DR Branch -->
+                        <div class="w-full md:w-1/2 p-4 border-2 border-amber-400 rounded-lg bg-amber-50">
+                             <h5 class="text-center text-xl font-bold text-amber-800 mb-4">DR - Disaster Recovery</h5>
+                             <ul class="space-y-3 text-left text-sm">
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Enfoque:</strong> Actividades de TI</li>
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Nivel:</strong> Táctico (Corto Plazo)</li>
+                                <li class="p-2 bg-white rounded shadow-sm"><strong>Perspectiva:</strong> Micro-nivel, enfocado en emergencias inmediatas de TI.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="mt-8 pt-6 border-t border-slate-200">
+                        <h3 class="text-xl font-semibold text-slate-800 mb-4 text-center">4 Pasos del Proceso de BCP</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center text-sm">
+                            <div class="p-3 bg-slate-100 rounded-lg"><strong>1. Project Scope & Planning</strong><p class="text-xs mt-1">Análisis de la organización, selección del equipo, requerimientos.</p></div>
+                            <div class="p-3 bg-slate-100 rounded-lg"><strong>2. Business Impact Analysis (BIA)</strong><p class="text-xs mt-1">Identificar prioridades, riesgos, impacto y recursos.</p></div>
+                            <div class="p-3 bg-slate-100 rounded-lg"><strong>3. Continuity Planning</strong><p class="text-xs mt-1">Desarrollo de la estrategia y el plan de continuidad.</p></div>
+                            <div class="p-3 bg-slate-100 rounded-lg"><strong>4. Approval & Implementation</strong><p class="text-xs mt-1">Aprobación del plan, implementación y mantenimiento.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ejemplo" class="content-section hidden section-fade-in">
+                <h2 class="text-4xl font-bold text-indigo-600 mb-4">8. Org Roles and Responsabilities</h2>
+                <p class="text-lg text-slate-600 mb-8">Veamos cómo se aplican los roles y responsabilidades en el contexto de "Tío Rico Bank".</p>
+                <div class="bg-white p-8 rounded-lg shadow-md space-y-6">
+                    <!-- Role: Owners / Senior Management -->
+                    <div class="flex flex-col md:flex-row border rounded-lg overflow-hidden">
+                        <div class="bg-indigo-600 text-white p-4 md:w-1/3 flex items-center justify-center">
+                            <h4 class="font-bold text-lg text-center">Propietarios / Controladores / Líderes Funcionales / Alta Gerencia</h4>
+                        </div>
+                        <div class="p-4 flex-1">
+                            <h5 class="font-bold text-indigo-800">Accountable for:</h5>
+                            <ul class="list-disc list-inside text-slate-700 mt-2 text-sm">
+                                <li>Asegurar que los controles de seguridad apropiados, consistentes con la política de Tío Rico Bank, sean implementados para proteger los activos.</li>
+                                <li>Determinar los niveles apropiados de sensibilidad o clasificación de los datos de los clientes.</li>
+                                <li>Determinar los privilegios de acceso.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Role: Information Systems Security Professionals -->
+                    <div class="flex flex-col md:flex-row border rounded-lg overflow-hidden">
+                        <div class="bg-indigo-600 text-white p-4 md:w-1/3 flex items-center justify-center">
+                            <h4 class="font-bold text-lg text-center">Profesionales de Seguridad de Sistemas de Información / Oficial de Seguridad de TI</h4>
+                        </div>
+                        <div class="p-4 flex-1">
+                            <h5 class="font-bold text-indigo-800">Responsible for:</h5>
+                            <ul class="list-disc list-inside text-slate-700 mt-2 text-sm">
+                                <li>Diseño, implementación, gestión y revisión de las políticas, estándares, baselines, procedimientos y guías de seguridad de Tío Rico Bank.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <!-- Role: Users -->
+                    <div class="flex flex-col md:flex-row border rounded-lg overflow-hidden">
+                        <div class="bg-indigo-600 text-white p-4 md:w-1/3 flex items-center justify-center">
+                            <h4 class="font-bold text-lg text-center">Usuarios</h4>
+                        </div>
+                        <div class="p-4 flex-1">
+                            <h5 class="font-bold text-indigo-800">Responsible for:</h5>
+                            <ul class="list-disc list-inside text-slate-700 mt-2 text-sm">
+                                <li>Adherencia a las políticas de seguridad.</li>
+                                <li>Preservar la disponibilidad, integridad y confidencialidad de los activos al acceder a ellos y utilizarlos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Role: Technology (IT) Officer -->
+                    <div class="flex flex-col md:flex-row border rounded-lg overflow-hidden">
+                        <div class="bg-slate-100 text-slate-800 p-4 md:w-1/3 flex items-center justify-center">
+                            <h4 class="font-bold text-lg text-center">Oficial de Tecnología (IT)</h4>
+                        </div>
+                        <div class="p-4 flex-1">
+                            <h5 class="font-bold text-slate-800">Responsible for:</h5>
+                            <ul class="list-disc list-inside text-slate-700 mt-2 text-sm">
+                                <li>Desarrollar e implementar soluciones tecnológicas de seguridad.</li>
+                                <li>Trabajar de cerca con los profesionales de seguridad para evaluar estrategias.</li>
+                                <li>Colaborar con el equipo de Business Continuity Management (BCM) para asegurar la continuidad de operaciones.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Other IT Roles -->
+                    <div class="flex flex-col md:flex-row border rounded-lg overflow-hidden">
+                         <div class="bg-slate-100 text-slate-800 p-4 md:w-1/3 flex items-center justify-center">
+                            <h4 class="font-bold text-lg text-center">Función de TI / Operador / Administrador / Administrador de Red</h4>
+                        </div>
+                        <div class="p-4 flex-1">
+                            <h5 class="font-bold text-slate-800">Responsible for:</h5>
+                             <ul class="list-disc list-inside text-slate-700 mt-2 text-sm">
+                                <li>Implementar y adherirse a las políticas de seguridad en Tío Rico Bank.</li>
+                                <li>Gestionar, solucionar problemas y aplicar parches de hardware y software.</li>
+                                <li>Administrar permisos de usuario y aplicaciones específicas.</li>
+                                <li>Mantener las redes informáticas y configurar equipos de red.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Role: Information Systems Auditors -->
+                    <div class="flex flex-col md:flex-row border rounded-lg overflow-hidden">
+                        <div class="bg-slate-100 text-slate-800 p-4 md:w-1/3 flex items-center justify-center">
+                            <h4 class="font-bold text-lg text-center">Auditores de Sistemas de Información</h4>
+                        </div>
+                        <div class="p-4 flex-1">
+                             <h5 class="font-bold text-slate-800">Responsible for:</h5>
+                             <ul class="list-disc list-inside text-slate-700 mt-2 text-sm">
+                                <li>Proporcionar a la gerencia una garantía independiente de que los objetivos de seguridad se están cumpliendo.</li>
+                                <li>Determinar si la política, los estándares y las guías son apropiados y efectivos para cumplir con los objetivos de seguridad de Tío Rico Bank.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="preguntas" class="content-section hidden section-fade-in">
+                <h2 class="text-4xl font-bold text-indigo-600 mb-4">9. Preguntas de Repaso</h2>
+                <div class="space-y-8">
+                    <!-- Quiz 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="quiz1">
+                        <p class="font-semibold text-lg mb-4">1. Una organización está desarrollando una nueva política de seguridad para el trabajo remoto. La dirección busca la máxima flexibilidad, mientras que el equipo de seguridad insiste en controles estrictos. Según los principios de gobierno de seguridad, ¿cuál es el enfoque más adecuado?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz1', this, false)">A. El equipo de seguridad debe implementar los controles más estrictos posibles.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz1', this, false)">B. Los deseos de la dirección por la flexibilidad deben prevalecer.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz1', this, false)">C. El CISO debe tomar una decisión unilateral.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz1', this, true)">D. Se debe adoptar un enfoque basado en riesgos para equilibrar los objetivos.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Respuesta Correcta: D.</strong><br>
+                            La gobernanza de seguridad no se trata de imponer controles absolutos, sino de gestionar el riesgo de una manera que se alinee con los objetivos del negocio. Un enfoque basado en riesgos permite encontrar un equilibrio entre la habilitación del negocio (flexibilidad) y la protección de activos, involucrando a todas las partes interesadas para crear una política que sea tanto efectiva como práctica.
+                        </div>
+                    </div>
+                    <!-- Quiz 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="quiz2">
+                        <p class="font-semibold text-lg mb-4">2. Una empresa descubre una brecha de datos que involucra PII de clientes en EE. UU. y la UE. ¿Cuál es el paso inicial más crítico antes de realizar una notificación generalizada?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz2', this, false)">A. Restaurar los sistemas afectados a partir de las copias de seguridad.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz2', this, true)">B. Determinar los elementos de datos específicos comprometidos y la residencia de los individuos.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz2', this, false)">C. Anunciar públicamente la brecha para demostrar transparencia.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz2', this, false)">D. Contratar a un abogado externo especializado.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Respuesta Correcta: B.</strong><br>
+                            Las leyes de notificación de brechas (como GDPR en la UE y las leyes estatales en EE. UU.) tienen requisitos muy específicos sobre a quién notificar, cuándo y qué información incluir. Estos requisitos dependen directamente de la residencia de las personas afectadas y del tipo de datos comprometidos. Por lo tanto, determinar el alcance exacto es el primer paso legal y de cumplimiento esencial.
+                        </div>
+                    </div>
+                    <!-- Quiz 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="quiz3">
+                        <p class="font-semibold text-lg mb-4">3. En un modelado de amenazas de una app bancaria, se identifica un riesgo de "doble gasto" de fondos. Según el modelo STRIDE, ¿qué tipo de amenaza es esta?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz3', this, false)">A. Spoofing</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz3', this, false)">B. Information Disclosure</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz3', this, false)">C. Repudiation</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz3', this, true)">D. Tampering</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Respuesta Correcta: D.</strong><br>
+                            Tampering se refiere a la modificación no autorizada de datos. Un ataque de "doble gasto" implica manipular el estado de una transacción o los datos del sistema para procesar un pago dos veces, lo cual es un ataque directo a la integridad de los datos y, por lo tanto, se clasifica como Tampering.
+                        </div>
+                    </div>
+                    <!-- Quiz 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="quiz4">
+                        <p class="font-semibold text-lg mb-4">4. Una organización tiene un RPO de 4 horas y un RTO de 24 horas para un sistema crítico. ¿Qué estrategia de recuperación cumple mejor con el RPO?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz4', this, false)">A. Copias de seguridad diarias completas.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz4', this, false)">B. Un "warm site" con "electronic vaulting" cada hora.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz4', this, true)">C. "Remote journaling" o "remote mirroring".</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz4', this, false)">D. Un "cold site" con copias de seguridad semanales.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Respuesta Correcta: C.</strong><br>
+                            Un RPO de 4 horas significa que la organización no puede permitirse perder más de 4 horas de datos. El "remote journaling" o "mirroring" replica los datos a un sitio secundario de forma continua o casi continua, lo que garantiza una pérdida de datos mínima (a menudo de segundos o minutos), cumpliendo fácilmente con un RPO estricto. Las copias de seguridad diarias o el "vaulting" por hora podrían no cumplir con este requisito.
+                        </div>
+                    </div>
+                    <!-- Quiz 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="quiz5">
+                        <p class="font-semibold text-lg mb-4">5. Un programa de concientización de seguridad no es efectivo (alta tasa de clics en phishing). ¿Cuál es el siguiente paso más efectivo para mejorarlo?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz5', this, false)">A. Aumentar la frecuencia de la capacitación a trimestral.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz5', this, false)">B. Implementar una política disciplinaria severa.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz5', this, true)">C. Introducir "gamification" y "security champions".</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('quiz5', this, false)">D. Subcontratar todo el programa a un proveedor externo.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Respuesta Correcta: C.</strong><br>
+                            El objetivo de la concientización es cambiar el comportamiento humano. Los métodos pasivos o punitivos a menudo son ineficaces. La "gamificación" (hacerlo divertido y competitivo) y los "security champions" (compañeros que promueven la seguridad) fomentan una cultura de seguridad positiva y un aprendizaje activo, lo que ha demostrado ser más efectivo para lograr un cambio de comportamiento duradero.
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="test" class="content-section hidden section-fade-in">
+                <h2 class="text-4xl font-bold text-indigo-600 mb-4">10. 20 Questions to Test</h2>
+                <div class="space-y-8">
+                    <!-- Test Question 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-1">
+                        <p class="font-semibold text-lg mb-4">1. Gavin is creating a report for management on the results of his most recent risk assessment. In his report, he would like to identify the remaining level of risk to the organization after adopting security controls. What term best describes this current level of risk?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-1', this, false)">A. Inherent risk</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-1', this, true)">B. Residual risk</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-1', this, false)">C. Control risk</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-1', this, false)">D. Mitigated risk</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> Residual risk is the risk that remains after security controls have been implemented. Inherent risk is the amount of risk that exists before any controls are put in place.
+                        </div>
+                    </div>
+                    <!-- Test Question 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-2">
+                        <p class="font-semibold text-lg mb-4">2. Francine is a security specialist for an online service provider in the United States. She recently received a claim from a copyright holder that a user is storing information on her service that violates the third party's copyright. What law governs the actions that Francine must take?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-2', this, true)">A. Digital Millennium Copyright Act (DMCA)</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-2', this, false)">B. Copyright law</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-2', this, false)">C. Economic Espionage Act</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-2', this, false)">D. Electronic Communications Privacy Act (ECPA)</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> The Digital Millennium Copyright Act (DMCA) provides a safe harbor for online service providers who promptly remove copyrighted content upon receiving a claim of copyright infringement from the copyright holder. Francine's actions would be governed by the DMCA.
+                        </div>
+                    </div>
+                     <!-- Test Question 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-3">
+                        <p class="font-semibold text-lg mb-4">3. Renee is purchasing a new software product and is working with the vendor on the negotiation of a license agreement that will specify customized terms of use and a discounted price. What type of agreement would normally be used to document the results of this negotiation?</p>
+                        <div class="space-y-2">
+                             <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-3', this, false)">A. Perpetual license</button>
+                             <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-3', this, false)">B. Subscription license</button>
+                             <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-3', this, true)">C. Enterprise license agreement</button>
+                             <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-3', this, false)">D. End-user license agreement</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> An enterprise license agreement is used when an organization negotiates customized terms of use and pricing for a software product. The other options are general license types.
+                        </div>
+                    </div>
+                     <!-- Test Question 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-4">
+                        <p class="font-semibold text-lg mb-4">4. Henry recently assisted one of his co-workers in preparing for the CISSP® exam. During this process, Henry disclosed confidential information about the content of the exam, in violation of Canon IV of the Code of Ethics: “Advance and protect the profession.” Who may bring ethics charges against Henry for this violation?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-4', this, true)">A. Anyone may bring charges.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-4', this, false)">B. Any certified or licensed professional may bring charges.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-4', this, false)">C. Only Henry's employer may bring charges.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-4', this, false)">D. Only the affected employee may bring charges.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Anyone may bring ethics charges against an ISC2-certified professional, member, or candidate for a violation of the Code of Ethics.
+                        </div>
+                    </div>
+                     <!-- Test Question 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-5">
+                        <p class="font-semibold text-lg mb-4">5. Wanda is working with one of her organization's European Union business partners to facilitate the exchange of customer information. Wanda's organization is located in the United States. What would be the best method for Wanda to use to ensure GDPR compliance?</p>
+                        <div class="space-y-2">
+                             <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-5', this, true)">A. Binding corporate rules</button>
+                             <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-5', this, false)">B. Privacy Shield</button>
+                             <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-5', this, false)">C. Standard contractual clauses</button>
+                             <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-5', this, false)">D. Consent</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Binding corporate rules (BCRs) are a common method used by organizations to ensure GDPR compliance when transferring personal data internationally within a multinational group of companies.
+                        </div>
+                    </div>
+                     <!-- Test Question 6 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-6">
+                        <p class="font-semibold text-lg mb-4">6. Chris is advising travelers from his organization who will be visiting many different countries overseas. He is concerned about compliance with export control laws. Which of the following technologies is most likely to trigger these regulations?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-6', this, false)">A. Memory chips</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-6', this, false)">B. Office productivity applications</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-6', this, false)">C. Hard drives</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-6', this, true)">D. Encryption software</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> Encryption software is the most likely technology on the list to trigger export control laws due to its potential dual-use nature (commercial and military applications).
+                        </div>
+                    </div>
+                    <!-- Test Question 7 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-7">
+                        <p class="font-semibold text-lg mb-4">7. Bobbi is investigating a security incident and discovers that an attacker began with a normal user account but managed to exploit a system vulnerability to provide that account with administrative rights. What type of attack took place under the STRIDE threat model?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-7', this, false)">A. Spoofing</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-7', this, false)">B. Repudiation</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-7', this, false)">C. Tampering</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-7', this, true)">D. Elevation of privilege</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> Elevation of privilege under the STRIDE threat model occurs when an attacker gains more privileges than they are authorized for.
+                        </div>
+                    </div>
+                    <!-- Test Question 8 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-8">
+                        <p class="font-semibold text-lg mb-4">8. You are completing your business continuity planning effort and have decided that you want to accept one of the risks. What should you do next?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-8', this, false)">A. Implement new security controls to reduce the risk level.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-8', this, false)">B. Design a disaster recovery plan.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-8', this, false)">C. Repeat the business impact assessment.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-8', this, true)">D. Document your decision-making process.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> Whenever you choose to accept a risk, you should maintain detailed documentation of the risk acceptance process to satisfy auditors in the future.
+                        </div>
+                    </div>
+                     <!-- Test Question 9 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-9">
+                        <p class="font-semibold text-lg mb-4">9. Tony is developing a business continuity plan and is having difficulty prioritizing resources because of the difficulty of combining information about tangible and intangible assets. What would be the most effective risk assessment approach for him to use?</p>
+                        <div class="space-y-2">
+                             <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-9', this, false)">A. Quantitative risk assessment</button>
+                             <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-9', this, false)">B. Qualitative risk assessment</button>
+                             <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-9', this, false)">C. Neither quantitative nor qualitative risk assessment</button>
+                             <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-9', this, true)">D. Combination of quantitative and qualitative risk assessment</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> Tony would see the best results by combining elements of quantitative and qualitative risk assessment. Quantitative risk assessment excels at analyzing financial risk, while qualitative risk assessment is a good tool for intangible risks. Combining the two techniques provides a well-rounded risk picture.
+                        </div>
+                    </div>
+                     <!-- Test Question 10 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-10">
+                        <p class="font-semibold text-lg mb-4">10. Vincent believes that a former employee took trade secret information from his firm and brought it with him to a competitor. He wants to pursue legal action. Under what law could he pursue charges?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-10', this, false)">A. Copyright law</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-10', this, false)">B. Lanham Act</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-10', this, false)">C. Glass-Steagall Act</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-10', this, true)">D. Economic Espionage Act</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> The Economic Espionage Act imposes fines and jail sentences on anyone found guilty of stealing trade secrets from a U.S. corporation. It gives true teeth to the intellectual property rights of trade secret owners.
+                        </div>
+                    </div>
+                    <!-- Test Question 11 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-11">
+                        <p class="font-semibold text-lg mb-4">11. Brenda's organization recently completed the acquisition of a competitor firm. Which one of the following tasks would be LEAST likely to be part of the organizational processes addressed during the acquisition?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-11', this, false)">A. Consolidation of security functions</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-11', this, false)">B. Integration of security tools</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-11', this, true)">C. Protection of intellectual property</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-11', this, false)">D. Documentation of security policies</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> The protection of intellectual property is a greater concern during a divestiture, where a subsidiary is being spun off into a separate organization, than an acquisition, where one firm has purchased another.
+                        </div>
+                    </div>
+                     <!-- Test Question 12 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-12">
+                        <p class="font-semibold text-lg mb-4">12. Kelly believes that an employee engaged in the unauthorized use of computing resources for a side business. After consulting with management, she decides to launch an administrative investigation. What is the burden of proof that she must meet in this investigation?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-12', this, false)">A. Preponderance of the evidence.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-12', this, false)">B. Beyond a reasonable doubt.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-12', this, false)">C. Beyond the shadow of a doubt.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-12', this, true)">D. No set standard.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> Unlike criminal or civil cases, administrative investigations are an internal matter, and there is no set standard of proof that Kelly must apply.
+                        </div>
+                    </div>
+                     <!-- Test Question 13 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-13">
+                        <p class="font-semibold text-lg mb-4">13. Laura has been asked to perform a security controls assessment (SCA). What type of organization is she most likely in?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-13', this, false)">A. Higher education</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-13', this, false)">B. Banking</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-13', this, true)">C. Government</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-13', this, false)">D. Healthcare</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> The term security controls assessment (SCA) is often used in government contexts, particularly within the NIST Risk Management Framework.
+                        </div>
+                    </div>
+                     <!-- Test Question 14 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-14">
+                        <p class="font-semibold text-lg mb-4">14. Carl is a federal agent investigating a computer crime case. He identified an attacker who engaged in illegal conduct and wants to pursue a case against that individual that will lead to imprisonment. What standard of proof must Carl meet?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-14', this, false)">A. Beyond the shadow of a doubt</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-14', this, false)">B. Preponderance of the evidence</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-14', this, true)">C. Beyond a reasonable doubt</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-14', this, false)">D. Majority of the evidence</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> In a criminal case, such as the one Carl is pursuing, the prosecutor must meet the beyond a reasonable doubt standard of proof.
+                        </div>
+                    </div>
+                     <!-- Test Question 15 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-15">
+                        <p class="font-semibold text-lg mb-4">15. Renee is designing a long-term security plan for her organization and has a three- to five-year planning horizon. Her primary goal is to align the security function with the broader plans and objectives of the business. What type of plan is she developing?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-15', this, false)">A. Operational</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-15', this, false)">B. Tactical</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-15', this, false)">C. Summary</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-15', this, true)">D. Strategic</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> Strategic plans have a long-term planning horizon of up to five years in most cases. They are designed to strategically align the security function with the business' objectives.
+                        </div>
+                    </div>
+                     <!-- Test Question 16 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-16">
+                        <p class="font-semibold text-lg mb-4">16. Gina is working to protect a logo that her company will use for a new product they are launching. She has questions about the intellectual property protection process for this logo. What U.S. government agency would be best able to answer her questions?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-16', this, true)">A. U.S. Patent and Trademark Office</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-16', this, false)">B. Library of Congress Copyright Office</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-16', this, false)">C. National Security Agency</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-16', this, false)">D. National Institute of Standards and Technology</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> A trademark is the correct intellectual property protection mechanism for a logo. Therefore, Gina should contact the U.S. Patent and Trademark Office (USPTO), which bears responsibility for the registration of trademarks.
+                        </div>
+                    </div>
+                    <!-- Test Question 17 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-17">
+                        <p class="font-semibold text-lg mb-4">17. Tom enables an application firewall provided by his cloud infrastructure as a service provider that is designed to block many types of application attacks. When viewed from a risk management perspective, what metric is Tom attempting to lower by implementing this countermeasure?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-17', this, false)">A. Impact</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-17', this, false)">B. RPO</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-17', this, false)">C. MTO</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-17', this, true)">D. Likelihood</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> By blocking application attacks, Tom is reducing the likelihood of a successful attack and, therefore, reducing the associated risk.
+                        </div>
+                    </div>
+                    <!-- Test Question 18 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-18">
+                        <p class="font-semibold text-lg mb-4">18. You are the CISO for a major hospital system and are preparing to sign a contract with a software-as-a-service (SaaS) email vendor. You want to perform a control assessment to ensure that its business continuity planning measures are reasonable. What type of audit might you request to meet this goal?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-18', this, false)">A. SOC 1</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-18', this, false)">B. FISMA</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-18', this, false)">C. PCI DSS</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-18', this, true)">D. SOC 2</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> A SOC 2 report focuses on controls related to security, availability, processing integrity, confidentiality, and privacy, making it suitable for assessing a SaaS vendor's business continuity planning measures.
+                        </div>
+                    </div>
+                    <!-- Test Question 19 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-19">
+                        <p class="font-semibold text-lg mb-4">19. Gary is analyzing a security incident and, during his investigation, encounters a user who denies having having performed an action that Gary believes he did perform. What type of threat has taken place under the STRIDE model?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-19', this, true)">A. Repudiation</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-19', this, false)">B. Information disclosure</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-19', this, false)">C. Tampering</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-19', this, false)">D. Elevation of privilege</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Repudiation occurs when a user denies having performed an action, and the system lacks sufficient evidence to prove otherwise. This is a common concern in incident investigations.
+                        </div>
+                    </div>
+                    <!-- Test Question 20 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="eng-quiz-20">
+                        <p class="font-semibold text-lg mb-4">20. Finally, there are historical records stored on the server that are extremely important to the business and should never be modified. You would like to add an integrity control that allows you to verify on a periodic basis that the files were not modified. What control can you add?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-20', this, true)">A. Hashing</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-20', this, false)">B. ACLs</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-20', this, false)">C. Read-only attributes</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('eng-quiz-20', this, false)">D. Firewalls</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Hashing is a strong integrity control. By regularly computing a hash of the files and comparing it to a baseline, any unauthorized modifications would be detected.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="test2" class="content-section hidden section-fade-in">
+                <h2 class="text-4xl font-bold text-indigo-600 mb-4">11. 30 Questions to Test DOM2</h2>
+                <div class="space-y-8">
+                    <!-- Test Question 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-1">
+                        <p class="font-semibold text-lg mb-4">1. COBIT (Control Objectives for Information and Related Technology) is a framework for the management and governance of information technology (IT). What data management role is most likely to select and apply COBIT to balance the need for security controls with business requirements?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-1', this, true)">A. Business owners</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-1', this, false)">B. Data processors</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-1', this, false)">C. Data owners</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-1', this, false)">D. Data stewards</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Business owners have to balance the need to provide value with regulatory, security, and other requirements. This makes the adoption of a common framework like COBIT attractive.
+                        </div>
+                    </div>
+                    <!-- Test Question 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-2">
+                         <p class="font-semibold text-lg mb-4">2. As a DBA, Amy's data role in her organization includes technical implementations of the data policies and standards, as well as managing the data structures that the data is stored in. What data role best fits what Amy does?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-2', this, true)">A. Data custodian</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-2', this, false)">B. Data owner</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-2', this, false)">C. Data processor</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-2', this, false)">D. Data user</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Amy is a data custodian and is responsible for the technical environment, including things like database structures and the technical implementations of data policies.
+                        </div>
+                    </div>
+                    <!-- Test Question 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-3">
+                         <p class="font-semibold text-lg mb-4">3. Which one of the following data roles bears ultimate organizational responsibility for data?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-3', this, false)">A. System owners</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-3', this, false)">B. Business owners</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-3', this, true)">C. Data owners</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-3', this, false)">D. Mission owners</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> The data owner has ultimate responsibility for the data of an organization and is typically the CEO, president, or another senior-level employee.
+                        </div>
+                    </div>
+                    <!-- Test Question 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-4">
+                         <p class="font-semibold text-lg mb-4">4. Your organization leverages memory-resident databases to improve system performance... What term best describes data that is resident in system memory?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-4', this, false)">A. Data at rest</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-4', this, false)">B. Buffered data</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-4', this, true)">C. Data in use</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-4', this, false)">D. Data in motion</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                            <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Data that is resident in system memory is considered data in use. Data can be at rest (on a disk), in use (in memory), or in transit (across a network).
+                        </div>
+                    </div>
+                    <!-- Test Question 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-5">
+                         <p class="font-semibold text-lg mb-4">5. What technique could you use to mark your trade secret information in case it was released or stolen and you need to identify it?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-5', this, false)">A. Classification</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-5', this, false)">B. Symmetric encryption</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-5', this, true)">C. Watermarks</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-5', this, false)">D. Metadata</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Watermarks are a technique that can be used to embed an identifier into digital content, which would allow the trade secret information to be identified if it were released or stolen.
+                        </div>
+                    </div>
+                    <!-- Test Question 6 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-6">
+                         <p class="font-semibold text-lg mb-4">6. What type of encryption is best suited for use on the file servers for the proprietary data, and how might you secure the data when it is in motion?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-6', this, false)">A. TLS at rest and AES in motion</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-6', this, true)">B. AES at rest and TLS in motion</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-6', this, false)">C. VPN at rest and TLS in motion</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-6', this, false)">D. DES at rest and AES in motion</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> AES is a strong modern symmetric encryption algorithm that is appropriate for encrypting data at rest. TLS is frequently used to secure data when it is in transit.
+                        </div>
+                    </div>
+                    <!-- Test Question 7 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-7">
+                         <p class="font-semibold text-lg mb-4">7. Fred wants to classify his organization's data using common labels: private, sensitive, public, and proprietary. Which of the following should he apply to his highest classification level based on common industry practices?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-7', this, false)">A. Private</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-7', this, false)">B. Sensitive</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-7', this, false)">C. Public</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-7', this, true)">D. Proprietary</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> Common practice makes proprietary or confidential data the most sensitive data. The other options represent lower classification levels.
+                        </div>
+                    </div>
+                     <!-- Test Question 8 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-8">
+                         <p class="font-semibold text-lg mb-4">8. If you are selecting a security standard for a Windows 11 system that processes credit cards, what security standard is your best choice?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-8', this, false)">A. Microsoft's Windows 11 security baseline</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-8', this, false)">B. The CIS Windows 11 baseline</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-8', this, true)">C. PCI DSS</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-8', this, false)">D. The NSA Windows 11 Secure Host Baseline</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> The Payment Card Industry Data Security Standard (PCI DSS) provides the set of requirements for credit card processing systems.
+                        </div>
+                    </div>
+                     <!-- Test Question 9 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-9">
+                         <p class="font-semibold text-lg mb-4">9. How should you determine which controls from the CIS baseline should be applied to a given system or software package?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-9', this, false)">A. Consult the custodians of the data.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-9', this, true)">B. Select based on the data classification of the data it stores or handles.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-9', this, false)">C. Apply the same controls to all systems.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-9', this, false)">D. Consult the business owner of the process the system or data supports.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> The controls implemented from a security baseline should match the data classification of the data used or stored on the system.
+                        </div>
+                    </div>
+                     <!-- Test Question 10 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-10">
+                         <p class="font-semibold text-lg mb-4">10. A company in the EU collects customer data and sends it to a third party for analysis. What term best describes the third-party analysis company?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-10', this, false)">A. The data controller</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-10', this, false)">B. The data owner</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-10', this, false)">C. The data subject</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-10', this, true)">D. The data processor</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> The third-party company is a data processor—they process data on behalf of the company, which is a data controller. The data is collected about data subjects.
+                        </div>
+                    </div>
+                    <!-- Test Question 11 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-11">
+                         <p class="font-semibold text-lg mb-4">11. What concern should be raised about reusing systems from a Top Secret project for a future Secret project after purging?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-11', this, false)">A. The Top Secret data may be commingled with the Secret data.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-11', this, true)">B. The cost of the sanitization process may exceed the cost of new equipment.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-11', this, false)">C. The data may be exposed as part of the sanitization process.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-11', this, false)">D. The organization's DLP system may flag the new system.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> Downgrading systems is rare due to difficulty ensuring complete sanitization. The cost of wiping/destroying media can exceed the cost of new equipment.
+                        </div>
+                    </div>
+                    <!-- Test Question 12 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-12">
+                         <p class="font-semibold text-lg mb-4">12. A healthcare company's data owner believes exposure of certain non-medical patient data could cause damage (but not exceptional damage). How should this data be classified?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-12', this, false)">A. Public</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-12', this, false)">B. Sensitive</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-12', this, true)">C. Private</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-12', this, false)">D. Confidential</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Private data is internal business data that shouldn't be exposed but doesn't meet the "severe damage" threshold for confidential.
+                        </div>
+                    </div>
+                    <!-- Test Question 13 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-13">
+                         <p class="font-semibold text-lg mb-4">13. What technology could help prevent confidential data from being emailed out of the organization?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-13', this, true)">A. DLP</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-13', this, false)">B. IDS</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-13', this, false)">C. A firewall</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-13', this, false)">D. UDP</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Data Loss Prevention (DLP) systems are designed to identify and prevent the unauthorized transmission of sensitive data.
+                        </div>
+                    </div>
+                    <!-- Test Question 14 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-14">
+                         <p class="font-semibold text-lg mb-4">14. Using the U.S. government's data classification system, how should a system containing Secret, Confidential, and Top Secret data be classified?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-14', this, true)">A. Top Secret</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-14', this, false)">B. Confidential</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-14', this, false)">C. Secret</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-14', this, false)">D. Mixed classification</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> When data is stored in a mixed classification environment, it is typically classified based on the highest classification of data included.
+                        </div>
+                    </div>
+                    <!-- Test Question 15 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-15">
+                         <p class="font-semibold text-lg mb-4">15. As a DBA, Amy's data role includes technical implementations of data policies. What data role best fits what Amy does?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-15', this, true)">A. Data custodian</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-15', this, false)">B. Data owner</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-15', this, false)">C. Data processor</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-15', this, false)">D. Data user</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Amy is a data custodian and is responsible for the technical environment, including things like database structures and the technical implementations of data policies.
+                        </div>
+                    </div>
+                     <!-- Test Question 16 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-16">
+                         <p class="font-semibold text-lg mb-4">16. Chris is a data owner. Which steps in the classification process is he most likely responsible for: 1. Set criteria, 2. Establish owners, 3. Classify data, 4. Select controls, 5. Select baselines?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-16', this, true)">A. He is responsible for steps 3, 4, and 5.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-16', this, false)">B. He is responsible for steps 1, 2, and 3.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-16', this, false)">C. He is responsible for steps 5, 6, and 7.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-16', this, false)">D. All steps are his direct responsibility.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> It is most likely that Chris would be responsible for classifying the data he owns (3), as well as helping or advising system owners on security requirements and control selection (4, 5).
+                        </div>
+                    </div>
+                     <!-- Test Question 17 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-17">
+                         <p class="font-semibold text-lg mb-4">17. Chris manages a team of system administrators who carry out steps 6, 7, and 8 (scoping, applying, enforcing controls). What data role are they fulfilling?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-17', this, false)">A. They are system owners and administrators.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-17', this, true)">B. They are administrators and custodians.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-17', this, false)">C. They are data owners and administrators.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-17', this, false)">D. They are custodians and users.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> System administrators act as data administrators who grant access and also as custodians tasked with the day-to-day application of security controls.
+                        </div>
+                    </div>
+                     <!-- Test Question 18 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-18">
+                         <p class="font-semibold text-lg mb-4">18. If Chris's company in the EU handles data for a third party, what role is his company operating in?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-18', this, false)">A. Business owners</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-18', this, false)">B. Mission owners</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-18', this, true)">C. Data processors</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-18', this, false)">D. Data administrators</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Third-party organizations that process personal data on behalf of a data controller are known as data processors.
+                        </div>
+                    </div>
+                     <!-- Test Question 19 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-19">
+                         <p class="font-semibold text-lg mb-4">19. What data role does a system that is used to process data have?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-19', this, false)">A. Mission owner</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-19', this, false)">B. Data owner</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-19', this, true)">C. Data processor</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-19', this, false)">D. Custodian</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Systems used to process data are data processors.
+                        </div>
+                    </div>
+                     <!-- Test Question 20 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-20">
+                         <p class="font-semibold text-lg mb-4">20. What data roles own step 1 (categorization), are delegated step 2 (control selection), and are responsible for step 3 (implementation) in the NIST framework?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-20', this, true)">A. Data owners, system owners, custodians</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-20', this, false)">B. Data processors, custodians, users</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-20', this, false)">C. Business owners, administrators, custodians</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-20', this, false)">D. System owners, business owners, administrators</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> The data owner is responsible for categorizing information systems and delegates the selection of controls to system owners, while custodians implement the controls.
+                        </div>
+                    </div>
+                    <!-- Test Question 21 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-21">
+                         <p class="font-semibold text-lg mb-4">21. Which of the following data roles is typically found as a third-party contracting relationship rather than inside a company?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-21', this, false)">A. Data owners</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-21', this, false)">B. Data controllers</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-21', this, false)">C. Data custodians</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-21', this, true)">D. Data processors</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> Data processors are typically third parties hired for specific tasks, while data owners, data controllers, and data custodians are typically internal roles within a company.
+                        </div>
+                    </div>
+                    <!-- Test Question 22 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-22">
+                         <p class="font-semibold text-lg mb-4">22. Why is data location a significant concern for data owners, controllers, and custodians?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-22', this, false)">A. It prevents the data from being lost.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-22', this, true)">B. Geographic location may impact compliance requirements.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-22', this, false)">C. Geographic location may drive storage costs.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-22', this, false)">D. It ensures that the proper data custodian works with it.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> Data location, particularly at rest, may drive compliance requirements based on local or national laws. This concern drives the majority of data location concerns.
+                        </div>
+                    </div>
+                    <!-- Test Question 23 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-23">
+                         <p class="font-semibold text-lg mb-4">23. Angela wants to implement data security controls from NIST 800-53. She works to determine which controls are appropriate for her organization's needs. What term best describes this action?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-23', this, true)">A. Scoping</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-23', this, false)">B. Bounds checking</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-23', this, false)">C. Data stewardship</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-23', this, false)">D. Tailoring</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Scoping is the process of determining which controls are appropriate to an organization, environment, or implementation.
+                        </div>
+                    </div>
+                    <!-- Test Question 24 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-24">
+                         <p class="font-semibold text-lg mb-4">24. What type of tool is best suited to identifying data like Social Security numbers, credit card numbers, and similar well-understood data formats?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-24', this, false)">A. Manual searching</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-24', this, true)">B. A sensitive data scanning tool</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-24', this, false)">C. An asset metadata search tool</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-24', this, false)">D. A SOAR</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> A sensitive data scanning tool is designed to automatically identify known data patterns such as Social Security or credit card numbers.
+                        </div>
+                    </div>
+                    <!-- Test Question 25 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-25">
+                         <p class="font-semibold text-lg mb-4">25. What does labeling data allow a DLP system to do?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-25', this, true)">A. The DLP system can detect labels and apply appropriate protections based on rules.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-25', this, false)">B. The DLP system can adjust labels based on changes in the classification scheme.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-25', this, false)">C. The DLP system can modify labels to permit requested actions.</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-25', this, false)">D. The DLP system can delete unlabeled data.</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Data loss prevention (DLP) systems can use labels on data to determine the appropriate controls to apply to the data.
+                        </div>
+                    </div>
+                    <!-- Test Question 26 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-26">
+                         <p class="font-semibold text-lg mb-4">26. Megan wants to prepare media for reuse in an environment operating at the same sensitivity level. Which of the following is the best option?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-26', this, true)">A. Clearing</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-26', this, false)">B. Erasing</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-26', this, false)">C. Purging</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-26', this, false)">D. Sanitization</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Clearing is a sanitization method that prepares media for reuse in an environment operating at the same sensitivity level.
+                        </div>
+                    </div>
+                    <!-- Test Question 27 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-27">
+                         <p class="font-semibold text-lg mb-4">27. Information maintained about an individual that can be used to distinguish or trace their identity is known as what type of information?</p>
+                        <div class="space-y-2">
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-27', this, true)">A. Personally identifiable information (PII)</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-27', this, false)">B. Personal health information (PHI)</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-27', this, false)">C. Social Security number (SSN)</button>
+                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-27', this, false)">D. Secure identity information (SII)</button>
+                        </div>
+                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Information maintained about an individual that can be used to distinguish or trace their identity is known as personally identifiable information (PII).
+                        </div>
+                    </div>
+                   </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.content-section');
+
+            function showSection(hash) {
+                const targetId = hash ? hash.substring(1) : 'intro';
+                
+                sections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${targetId}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+            
+            document.getElementById('navigation').addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    const targetHash = e.target.getAttribute('href');
+                    history.pushState(null, null, targetHash);
+                    showSection(targetHash);
+                    window.scrollTo(0, 0);
+                }
+            });
+            
+            window.addEventListener('popstate', function() {
+                showSection(window.location.hash);
+            });
+
+            showSection(window.location.hash || '#intro');
+        });
+
+        function toggleDetails(elementId) {
+            const element = document.getElementById(elementId);
+            element.classList.toggle('open');
+        }
+
+        function checkQuizAnswer(quizId, selectedButton, isCorrect) {
+            const quizContainer = document.getElementById(quizId);
+            const feedbackEl = quizContainer.querySelector('.quiz-feedback');
+            const options = quizContainer.querySelectorAll('.quiz-option');
+
+            options.forEach(option => {
+                option.disabled = true;
+                option.classList.remove('hover:bg-slate-100');
+                if (option.textContent.trim().startsWith(selectedButton.textContent.trim().substring(0,2))) {
+                    if (isCorrect) {
+                        option.classList.add('bg-green-100', 'border-green-400');
+                    } else {
+                        option.classList.add('bg-red-100', 'border-red-400');
+                    }
+                }
+                // Highlight the correct answer
+                if (option.getAttribute('onclick').includes(', true)')) {
+                    option.classList.add('bg-green-100', 'border-green-400');
+                }
+            });
+
+            feedbackEl.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
