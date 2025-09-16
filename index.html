@@ -800,357 +800,427 @@
                 <h2 class="text-4xl font-bold text-indigo-600 mb-4">11. 30 Questions to Test DOM2</h2>
                 <div class="space-y-8">
                     <!-- Test Question 1 -->
+                    
                     <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-1">
-                        <p class="font-semibold text-lg mb-4">1. COBIT (Control Objectives for Information and Related Technology) is a framework for the management and governance of information technology (IT). What data management role is most likely to select and apply COBIT to balance the need for security controls with business requirements?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-1', this, true)">A. Business owners</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-1', this, false)">B. Data processors</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-1', this, false)">C. Data owners</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-1', this, false)">D. Data stewards</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                            <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Business owners have to balance the need to provide value with regulatory, security, and other requirements. This makes the adoption of a common framework like COBIT attractive.
-                        </div>
+                    <p class="font-semibold text-lg mb-4">1. COBIT (Control Objectives for Information and Related Technology) is a framework for the management and governance of information technology (IT). What data management role is most likely to select and apply COBIT to balance the need for security controls with business requirements?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-1', this, true)">A. Business owners</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-1', this, false)">B. Data processors</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-1', this, false)">C. Data owners</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-1', this, false)">D. Data stewards</button>
                     </div>
-                    <!-- Test Question 2 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-2">
-                         <p class="font-semibold text-lg mb-4">2. As a DBA, Amy's data role in her organization includes technical implementations of the data policies and standards, as well as managing the data structures that the data is stored in. What data role best fits what Amy does?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-2', this, true)">A. Data custodian</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-2', this, false)">B. Data owner</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-2', this, false)">C. Data processor</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-2', this, false)">D. Data user</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                            <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Amy is a data custodian and is responsible for the technical environment, including things like database structures and the technical implementations of data policies.
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Business owners are responsible for the overall strategy and profitability of a business unit, which includes balancing operational needs, security, and regulatory compliance. COBIT provides a framework to achieve this balance.
+ ◦ <strong>Why other options are not correct:</strong> Data owners are responsible for classifying data and defining access rules, but not typically for selecting enterprise-wide governance frameworks. Data processors simply process data on behalf of a controller. Data stewards are responsible for data quality and metadata management on a day-to-day basis.
                     </div>
-                    <!-- Test Question 3 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-3">
-                         <p class="font-semibold text-lg mb-4">3. Which one of the following data roles bears ultimate organizational responsibility for data?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-3', this, false)">A. System owners</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-3', this, false)">B. Business owners</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-3', this, true)">C. Data owners</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-3', this, false)">D. Mission owners</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                            <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> The data owner has ultimate responsibility for the data of an organization and is typically the CEO, president, or another senior-level employee.
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-2">
+                    <p class="font-semibold text-lg mb-4">2. As a DBA, Amy's data role in her organization includes technical implementations of the data policies and standards, as well as managing the data structures that the data is stored in. What data role best fits what Amy does?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-2', this, true)">A. Data custodian</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-2', this, false)">B. Data owner</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-2', this, false)">C. Data processor</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-2', this, false)">D. Data user</button>
                     </div>
-                    <!-- Test Question 4 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-4">
-                         <p class="font-semibold text-lg mb-4">4. Your organization leverages memory-resident databases to improve system performance... What term best describes data that is resident in system memory?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-4', this, false)">A. Data at rest</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-4', this, false)">B. Buffered data</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-4', this, true)">C. Data in use</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-4', this, false)">D. Data in motion</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                            <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Data that is resident in system memory is considered data in use. Data can be at rest (on a disk), in use (in memory), or in transit (across a network).
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> The data custodian is the role responsible for the technical environment and implementation of data security controls, which perfectly describes the tasks of a DBA like Amy.
+ ◦ <strong>Why other options are not correct:</strong> A data owner is a senior leader with ultimate responsibility for the data, not a technical implementer. A data processor is an entity processing data on behalf of another. A data user is anyone who accesses data to perform their job.
                     </div>
-                    <!-- Test Question 5 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-5">
-                         <p class="font-semibold text-lg mb-4">5. What technique could you use to mark your trade secret information in case it was released or stolen and you need to identify it?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-5', this, false)">A. Classification</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-5', this, false)">B. Symmetric encryption</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-5', this, true)">C. Watermarks</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-5', this, false)">D. Metadata</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Watermarks are a technique that can be used to embed an identifier into digital content, which would allow the trade secret information to be identified if it were released or stolen.
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-3">
+                    <p class="font-semibold text-lg mb-4">3. Which one of the following data roles bears ultimate organizational responsibility for data?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-3', this, false)">A. System owners</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-3', this, false)">B. Business owners</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-3', this, true)">C. Data owners</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-3', this, false)">D. Mission owners</button>
                     </div>
-                    <!-- Test Question 6 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-6">
-                         <p class="font-semibold text-lg mb-4">6. What type of encryption is best suited for use on the file servers for the proprietary data, and how might you secure the data when it is in motion?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-6', this, false)">A. TLS at rest and AES in motion</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-6', this, true)">B. AES at rest and TLS in motion</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-6', this, false)">C. VPN at rest and TLS in motion</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-6', this, false)">D. DES at rest and AES in motion</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> AES is a strong modern symmetric encryption algorithm that is appropriate for encrypting data at rest. TLS is frequently used to secure data when it is in transit.
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> The data owner is typically a senior-level employee who is accountable for a specific dataset and has the final say on its use, classification, and protection.
+ ◦ <strong>Why other options are not correct:</strong> System owners are responsible for the systems that process data, not the data itself. Business and mission owners are responsible for the success of a process or program, which uses data but doesn't entail ultimate responsibility for it as a corporate asset.
                     </div>
-                    <!-- Test Question 7 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-7">
-                         <p class="font-semibold text-lg mb-4">7. Fred wants to classify his organization's data using common labels: private, sensitive, public, and proprietary. Which of the following should he apply to his highest classification level based on common industry practices?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-7', this, false)">A. Private</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-7', this, false)">B. Sensitive</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-7', this, false)">C. Public</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-7', this, true)">D. Proprietary</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> Common practice makes proprietary or confidential data the most sensitive data. The other options represent lower classification levels.
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-4">
+                    <p class="font-semibold text-lg mb-4">4. Your organization handles customer data, internal business data, and trade secrets. To improve performance, memory-resident databases are used for processing. When data is resident in system memory, what is its state?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-4', this, false)">A. Data at rest</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-4', this, false)">B. Buffered data</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-4', this, true)">C. Data in use</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-4', this, false)">D. Data in motion</button>
                     </div>
-                     <!-- Test Question 8 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-8">
-                         <p class="font-semibold text-lg mb-4">8. If you are selecting a security standard for a Windows 11 system that processes credit cards, what security standard is your best choice?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-8', this, false)">A. Microsoft's Windows 11 security baseline</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-8', this, false)">B. The CIS Windows 11 baseline</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-8', this, true)">C. PCI DSS</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-8', this, false)">D. The NSA Windows 11 Secure Host Baseline</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> The Payment Card Industry Data Security Standard (PCI DSS) provides the set of requirements for credit card processing systems.
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> "Data in use" is the standard term for data that is actively being processed by a CPU or is currently in system memory (RAM) for processing.
+ ◦ <strong>Why other options are not correct:</strong> Data at rest refers to data stored on persistent media like a hard drive. Data in motion is data being transmitted across a network. Buffered data is a temporary holding area, but "data in use" is the broader, more accurate classification for data in memory.
                     </div>
-                     <!-- Test Question 9 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-9">
-                         <p class="font-semibold text-lg mb-4">9. How should you determine which controls from the CIS baseline should be applied to a given system or software package?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-9', this, false)">A. Consult the custodians of the data.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-9', this, true)">B. Select based on the data classification of the data it stores or handles.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-9', this, false)">C. Apply the same controls to all systems.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-9', this, false)">D. Consult the business owner of the process the system or data supports.</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> The controls implemented from a security baseline should match the data classification of the data used or stored on the system.
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-5">
+                    <p class="font-semibold text-lg mb-4">5. In an organization that handles sensitive trade secret information, what technique can be used to embed a hidden identifier within the data to trace its origin if it is stolen or leaked?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-5', this, false)">A. Classification</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-5', this, false)">B. Symmetric encryption</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-5', this, true)">C. Watermarks</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-5', this, false)">D. Metadata</button>
                     </div>
-                     <!-- Test Question 10 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-10">
-                         <p class="font-semibold text-lg mb-4">10. A company in the EU collects customer data and sends it to a third party for analysis. What term best describes the third-party analysis company?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-10', this, false)">A. The data controller</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-10', this, false)">B. The data owner</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-10', this, false)">C. The data subject</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-10', this, true)">D. The data processor</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> The third-party company is a data processor—they process data on behalf of the company, which is a data controller. The data is collected about data subjects.
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Digital watermarks are used to embed a hidden identifier into content, which allows for tracing the source or identifying the origin of information if it is leaked.
+ ◦ <strong>Why other options are not correct:</strong> Classification is the process of labeling data by sensitivity, not marking it for identification. Symmetric encryption ensures confidentiality but doesn't identify the data's origin. Metadata is data about data but is easily stripped and not designed for hidden identification.
                     </div>
-                    <!-- Test Question 11 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-11">
-                         <p class="font-semibold text-lg mb-4">11. What concern should be raised about reusing systems from a Top Secret project for a future Secret project after purging?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-11', this, false)">A. The Top Secret data may be commingled with the Secret data.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-11', this, true)">B. The cost of the sanitization process may exceed the cost of new equipment.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-11', this, false)">C. The data may be exposed as part of the sanitization process.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-11', this, false)">D. The organization's DLP system may flag the new system.</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> Downgrading systems is rare due to difficulty ensuring complete sanitization. The cost of wiping/destroying media can exceed the cost of new equipment.
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-6">
+                    <p class="font-semibold text-lg mb-4">6. For an organization storing proprietary data on file servers, what encryption standard is best for protecting the data at rest, and what protocol is best for securing it while in motion over the network?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-6', this, false)">A. TLS at rest and AES in motion</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-6', this, true)">B. AES at rest and TLS in motion</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-6', this, false)">C. VPN at rest and TLS in motion</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-6', this, false)">D. DES at rest and AES in motion</button>
                     </div>
-                    <!-- Test Question 12 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-12">
-                         <p class="font-semibold text-lg mb-4">12. A healthcare company's data owner believes exposure of certain non-medical patient data could cause damage (but not exceptional damage). How should this data be classified?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-12', this, false)">A. Public</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-12', this, false)">B. Sensitive</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-12', this, true)">C. Private</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-12', this, false)">D. Confidential</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Private data is internal business data that shouldn't be exposed but doesn't meet the "severe damage" threshold for confidential.
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> AES (Advanced Encryption Standard) is a strong, modern symmetric algorithm ideal for encrypting data at rest (on file servers). TLS (Transport Layer Security) is the standard protocol for securing data in motion (across a network).
+ ◦ <strong>Why other options are not correct:</strong> The other options misapply the technologies (e.g., TLS is not for data at rest) or use outdated and insecure standards like DES (Data Encryption Standard).
                     </div>
-                    <!-- Test Question 13 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-13">
-                         <p class="font-semibold text-lg mb-4">13. What technology could help prevent confidential data from being emailed out of the organization?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-13', this, true)">A. DLP</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-13', this, false)">B. IDS</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-13', this, false)">C. A firewall</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-13', this, false)">D. UDP</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Data Loss Prevention (DLP) systems are designed to identify and prevent the unauthorized transmission of sensitive data.
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-7">
+                    <p class="font-semibold text-lg mb-4">7. Fred wants to classify his organization's data using common labels: private, sensitive, public, and proprietary. Which of the following should he apply to his highest classification level based on common industry practices?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-7', this, false)">A. Private</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-7', this, false)">B. Sensitive</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-7', this, false)">C. Public</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-7', this, true)">D. Proprietary</button>
                     </div>
-                    <!-- Test Question 14 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-14">
-                         <p class="font-semibold text-lg mb-4">14. Using the U.S. government's data classification system, how should a system containing Secret, Confidential, and Top Secret data be classified?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-14', this, true)">A. Top Secret</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-14', this, false)">B. Confidential</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-14', this, false)">C. Secret</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-14', this, false)">D. Mixed classification</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> When data is stored in a mixed classification environment, it is typically classified based on the highest classification of data included.
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> In commercial classification schemes, "Proprietary" (or "Confidential") denotes the most sensitive information, such as trade secrets, the disclosure of which could cause exceptional damage.
+ ◦ <strong>Why other options are not correct:</strong> "Public" is the lowest level. "Private" typically refers to internal data that is not for public release but is less sensitive than proprietary data. "Sensitive" is a general term and not usually the highest level in a formal scheme.
                     </div>
-                    <!-- Test Question 15 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-15">
-                         <p class="font-semibold text-lg mb-4">15. As a DBA, Amy's data role includes technical implementations of data policies. What data role best fits what Amy does?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-15', this, true)">A. Data custodian</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-15', this, false)">B. Data owner</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-15', this, false)">C. Data processor</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-15', this, false)">D. Data user</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Amy is a data custodian and is responsible for the technical environment, including things like database structures and the technical implementations of data policies.
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-8">
+                    <p class="font-semibold text-lg mb-4">8. If you are selecting a security standard for a Windows 11 system that processes credit cards, what security standard is your best choice?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-8', this, false)">A. Microsoft's Windows 11 security baseline</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-8', this, false)">B. The CIS Windows 11 baseline</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-8', this, true)">C. PCI DSS</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-8', this, false)">D. The NSA Windows 11 Secure Host Baseline</button>
                     </div>
-                     <!-- Test Question 16 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-16">
-                         <p class="font-semibold text-lg mb-4">16. Chris is a data owner. Which steps in the classification process is he most likely responsible for: 1. Set criteria, 2. Establish owners, 3. Classify data, 4. Select controls, 5. Select baselines?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-16', this, true)">A. He is responsible for steps 3, 4, and 5.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-16', this, false)">B. He is responsible for steps 1, 2, and 3.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-16', this, false)">C. He is responsible for steps 5, 6, and 7.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-16', this, false)">D. All steps are his direct responsibility.</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> It is most likely that Chris would be responsible for classifying the data he owns (3), as well as helping or advising system owners on security requirements and control selection (4, 5).
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> The Payment Card Industry Data Security Standard (PCI DSS) is the mandatory regulatory standard for any system that handles credit card data. Compliance is required.
+ ◦ <strong>Why other options are not correct:</strong> While the Microsoft, CIS, and NSA baselines are excellent resources for hardening the operating system, they are not the specific, mandatory compliance standard for payment card processing. PCI DSS is the primary requirement.
                     </div>
-                     <!-- Test Question 17 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-17">
-                         <p class="font-semibold text-lg mb-4">17. Chris manages a team of system administrators who carry out steps 6, 7, and 8 (scoping, applying, enforcing controls). What data role are they fulfilling?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-17', this, false)">A. They are system owners and administrators.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-17', this, true)">B. They are administrators and custodians.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-17', this, false)">C. They are data owners and administrators.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-17', this, false)">D. They are custodians and users.</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> System administrators act as data administrators who grant access and also as custodians tasked with the day-to-day application of security controls.
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-9">
+                    <p class="font-semibold text-lg mb-4">9. Your organization uses the Center for Internet Security (CIS) benchmarks as a security baseline for its systems. How should you determine which specific controls from a CIS benchmark to apply to a particular system?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-9', this, false)">A. Consult the custodians of the data.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-9', this, true)">B. Select based on the data classification of the data it stores or handles.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-9', this, false)">C. Apply the same controls to all systems.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-9', this, false)">D. Consult the business owner of the process the system or data supports.</button>
                     </div>
-                     <!-- Test Question 18 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-18">
-                         <p class="font-semibold text-lg mb-4">18. If Chris's company in the EU handles data for a third party, what role is his company operating in?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-18', this, false)">A. Business owners</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-18', this, false)">B. Mission owners</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-18', this, true)">C. Data processors</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-18', this, false)">D. Data administrators</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Third-party organizations that process personal data on behalf of a data controller are known as data processors.
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> The principle of proportionality dictates that security controls should be commensurate with the sensitivity and value of the data they protect. Therefore, the data's classification is the primary driver for selecting controls.
+ ◦ <strong>Why other options are not correct:</strong> Custodians implement controls but don't decide on them. Applying the same controls everywhere is inefficient and costly. Business owners provide input, but the formal data classification should be the definitive guide.
                     </div>
-                     <!-- Test Question 19 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-19">
-                         <p class="font-semibold text-lg mb-4">19. What data role does a system that is used to process data have?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-19', this, false)">A. Mission owner</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-19', this, false)">B. Data owner</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-19', this, true)">C. Data processor</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-19', this, false)">D. Custodian</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Systems used to process data are data processors.
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-10">
+                    <p class="font-semibold text-lg mb-4">10. The company that Henry works for operates in the EU and collects data about their customers. They send that data to a third party to analyze and provide reports to help the company make better business decisions. What term best describes the third-party analysis company?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-10', this, false)">A. The data controller</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-10', this, false)">B. The data owner</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-10', this, false)">C. The data subject</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-10', this, true)">D. The data processor</button>
                     </div>
-                     <!-- Test Question 20 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-20">
-                         <p class="font-semibold text-lg mb-4">20. What data roles own step 1 (categorization), are delegated step 2 (control selection), and are responsible for step 3 (implementation) in the NIST framework?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-20', this, true)">A. Data owners, system owners, custodians</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-20', this, false)">B. Data processors, custodians, users</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-20', this, false)">C. Business owners, administrators, custodians</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-20', this, false)">D. System owners, business owners, administrators</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> The data owner is responsible for categorizing information systems and delegates the selection of controls to system owners, while custodians implement the controls.
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> In the context of the EU GDPR, the organization that processes personal data on behalf of the data controller is defined as the data processor.
+ ◦ <strong>Why other options are not correct:</strong> Henry's company is the data controller because it determines the purpose of the processing. The data owner is an internal role of responsibility. The data subject is the individual customer whose data is being collected.
                     </div>
-                    <!-- Test Question 21 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-21">
-                         <p class="font-semibold text-lg mb-4">21. Which of the following data roles is typically found as a third-party contracting relationship rather than inside a company?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-21', this, false)">A. Data owners</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-21', this, false)">B. Data controllers</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-21', this, false)">C. Data custodians</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-21', this, true)">D. Data processors</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: D.</strong><br><strong>Justification:</strong> Data processors are typically third parties hired for specific tasks, while data owners, data controllers, and data custodians are typically internal roles within a company.
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-11">
+                    <p class="font-semibold text-lg mb-4">11. Fred's organization allows downgrading of systems for reuse after projects have been finished and the systems have been purged. What concern should Fred raise about the reuse of the systems from his Top Secret classified project for a future project classified as Secret?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-11', this, false)">A. The Top Secret data may be commingled with the Secret data...</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-11', this, true)">B. The cost of the sanitization process may exceed the cost of new equipment.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-11', this, false)">C. The data may be exposed as part of the sanitization process.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-11', this, false)">D. The organization's DLP system may flag the new system...</button>
                     </div>
-                    <!-- Test Question 22 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-22">
-                         <p class="font-semibold text-lg mb-4">22. Why is data location a significant concern for data owners, controllers, and custodians?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-22', this, false)">A. It prevents the data from being lost.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-22', this, true)">B. Geographic location may impact compliance requirements.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-22', this, false)">C. Geographic location may drive storage costs.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-22', this, false)">D. It ensures that the proper data custodian works with it.</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> Data location, particularly at rest, may drive compliance requirements based on local or national laws. This concern drives the majority of data location concerns.
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> The processes required to securely sanitize a system that handled Top Secret data to a level where it is guaranteed to be clean for reuse at a lower classification are extremely rigorous, time-consuming, and expensive. It is often cheaper and less risky to purchase new hardware.
+ ◦ <strong>Why other options are not correct:</strong> A proper purge should prevent commingling. Exposure during sanitization is a risk, but it's managed by cleared personnel; the cost is the more significant business concern. A DLP system would flag data based on its labels, not the history of the hardware.
                     </div>
-                    <!-- Test Question 23 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-23">
-                         <p class="font-semibold text-lg mb-4">23. Angela wants to implement data security controls from NIST 800-53. She works to determine which controls are appropriate for her organization's needs. What term best describes this action?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-23', this, true)">A. Scoping</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-23', this, false)">B. Bounds checking</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-23', this, false)">C. Data stewardship</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-23', this, false)">D. Tailoring</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Scoping is the process of determining which controls are appropriate to an organization, environment, or implementation.
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-12">
+                    <p class="font-semibold text-lg mb-4">12. A healthcare company must classify non-medical patient data like phone numbers and addresses. A data owner determined that its exposure could cause moderate, but not exceptional, damage. How should this data be classified?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-12', this, false)">A. Public</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-12', this, false)">B. Sensitive</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-12', this, true)">C. Private</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-12', this, false)">D. Confidential</button>
                     </div>
-                    <!-- Test Question 24 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-24">
-                         <p class="font-semibold text-lg mb-4">24. What type of tool is best suited to identifying data like Social Security numbers, credit card numbers, and similar well-understood data formats?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-24', this, false)">A. Manual searching</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-24', this, true)">B. A sensitive data scanning tool</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-24', this, false)">C. An asset metadata search tool</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-24', this, false)">D. A SOAR</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> A sensitive data scanning tool is designed to automatically identify known data patterns such as Social Security or credit card numbers.
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> The "Private" classification is appropriate for data that is not intended for public release and whose disclosure could cause a moderate level of damage to the organization or individuals.
+ ◦ <strong>Why other options are not correct:</strong> "Public" would be incorrect as the data is not for release. "Confidential" is typically reserved for data that could cause exceptional damage. "Sensitive" is a correct but less specific term; "Private" is more precise in this context.
                     </div>
-                    <!-- Test Question 25 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-25">
-                         <p class="font-semibold text-lg mb-4">25. What does labeling data allow a DLP system to do?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-25', this, true)">A. The DLP system can detect labels and apply appropriate protections based on rules.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-25', this, false)">B. The DLP system can adjust labels based on changes in the classification scheme.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-25', this, false)">C. The DLP system can modify labels to permit requested actions.</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-25', this, false)">D. The DLP system can delete unlabeled data.</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Data loss prevention (DLP) systems can use labels on data to determine the appropriate controls to apply to the data.
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-13">
+                    <p class="font-semibold text-lg mb-4">13. For a healthcare company handling confidential patient data, what technology is specifically designed to inspect outbound traffic and block sensitive information from being emailed outside the organization?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-13', this, true)">A. DLP</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-13', this, false)">B. IDS</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-13', this, false)">C. A firewall</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-13', this, false)">D. UDP</button>
                     </div>
-                    <!-- Test Question 26 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-26">
-                         <p class="font-semibold text-lg mb-4">26. Megan wants to prepare media for reuse in an environment operating at the same sensitivity level. Which of the following is the best option?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-26', this, true)">A. Clearing</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-26', this, false)">B. Erasing</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-26', this, false)">C. Purging</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-26', this, false)">D. Sanitization</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Clearing is a sanitization method that prepares media for reuse in an environment operating at the same sensitivity level.
-                        </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Data Loss Prevention (DLP) is a technology specifically designed to inspect network traffic and endpoints for sensitive data and block unauthorized transmissions, such as emailing confidential files.
+ ◦ <strong>Why other options are not correct:</strong> An IDS detects potential intrusions but does not prevent data exfiltration. A firewall controls traffic based on ports and IP addresses, not content. UDP is a network protocol, not a security tool.
                     </div>
-                    <!-- Test Question 27 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-27">
-                         <p class="font-semibold text-lg mb-4">27. Information maintained about an individual that can be used to distinguish or trace their identity is known as what type of information?</p>
-                        <div class="space-y-2">
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-27', this, true)">A. Personally identifiable information (PII)</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-27', this, false)">B. Personal health information (PHI)</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-27', this, false)">C. Social Security number (SSN)</button>
-                            <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-27', this, false)">D. Secure identity information (SII)</button>
-                        </div>
-                        <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
-                           <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Information maintained about an individual that can be used to distinguish or trace their identity is known as personally identifiable information (PII).
-                        </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-14">
+                    <p class="font-semibold text-lg mb-4">14. Jacob's organization uses the U.S. government's data classification system, which includes Top Secret, Secret, Confidential, and Unclassified ratings (from most sensitive to least). Jacob encounters a system that contains Secret, Confidential, and Top Secret data. How should it be classified?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-14', this, true)">A. Top Secret</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-14', this, false)">B. Confidential</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-14', this, false)">C. Secret</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-14', this, false)">D. Mixed classification</button>
                     </div>
-                   </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> A fundamental principle of data classification is that any collection of data (like a file, folder, or entire system) must be classified at the level of the most sensitive data it contains. This is known as the "high water mark" principle.
+ ◦ <strong>Why other options are not correct:</strong> Classifying it as Secret or Confidential would fail to protect the Top Secret data appropriately. "Mixed classification" is not a valid label in this hierarchical system.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-15">
+                    <p class="font-semibold text-lg mb-4">15. As a DBA, Amy's data role in her organization includes technical implementations of the data policies and standards, as well as managing the data structures that the data is stored in. What data role best fits what Amy does?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-15', this, true)">A. Data custodian</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-15', this, false)">B. Data owner</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-15', this, false)">C. Data processor</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-15', this, false)">D. Data user</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> A data custodian is responsible for the secure, technical management of data assets, including implementing policies and managing data structures. This role aligns perfectly with the hands-on responsibilities of a Database Administrator (DBA).
+ ◦ <strong>Why other options are not correct:</strong> Data owners have strategic responsibility. Data processors act on behalf of a controller. Data users are consumers of the data for business functions.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-16">
+                    <p class="font-semibold text-lg mb-4">16. An organization's data classification process includes these steps: 1. Set criteria, 2. Establish owners, 3. Classify data, 4. Select controls, 5. Select baselines. If Chris is a data owner, for which steps is he most likely responsible?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-16', this, true)">A. He is responsible for steps 3, 4, and 5.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-16', this, false)">B. He is responsible for steps 1, 2, and 3.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-16', this, false)">C. He is responsible for steps 5, 6, and 7.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-16', this, false)">D. All steps are his direct responsibility.</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> As a data owner, Chris's core responsibilities are to classify the data he owns (Step 3) and specify the protection requirements, which informs the selection of controls and baselines (Steps 4 and 5).
+ ◦ <strong>Why other options are not correct:</strong> Steps 1 (setting criteria) and 2 (establishing owners) are typically done at a higher, enterprise-level of governance, above a single data owner. Full responsibility for all steps is incorrect as implementation is delegated to custodians.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-17">
+                    <p class="font-semibold text-lg mb-4">17. In a formal classification process, if a team of system administrators is responsible for implementing, monitoring, and enforcing the selected security controls, what dual data roles are they primarily fulfilling?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-17', this, false)">A. They are system owners and administrators.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-17', this, true)">B. They are administrators and custodians.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-17', this, false)">C. They are data owners and administrators.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-17', this, false)">D. They are custodians and users.</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> System administrators perform the hands-on work of applying security controls, managing access, and maintaining systems. This directly maps to the roles of data administrator (managing access) and data custodian (day-to-day protection of data).
+ ◦ <strong>Why other options are not correct:</strong> They are not system owners, who have budget and overall responsibility for a system. They are not data owners, who have ultimate accountability for the data. While they may be users of the system for administrative tasks, their primary role here is custodial.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-18">
+                    <p class="font-semibold text-lg mb-4">18. If a company operating within the European Union is contracted to manage and protect data on behalf of a client, what is the company's official role under the GDPR?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-18', this, false)">A. Business owners</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-18', this, false)">B. Mission owners</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-18', this, true)">C. Data processors</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-18', this, false)">D. Data administrators</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Under GDPR, a company that processes data on behalf of another company (the data controller) is known as a data processor.
+ ◦ <strong>Why other options are not correct:</strong> Business and mission owners are internal roles related to business processes. Data administrators are internal roles responsible for granting access to data. The company as a whole, in its relationship with the client, is a data processor.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-19">
+                    <p class="font-semibold text-lg mb-4">19. What data role does a system that is used to process data have?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-19', this, false)">A. Mission owner</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-19', this, false)">B. Data owner</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-19', this, true)">C. Data processor</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-19', this, false)">D. Custodian</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> The term "data processor" can refer to both an organization that processes data for another and the actual system (e.g., an application or server) that performs the processing operations.
+ ◦ <strong>Why other options are not correct:</strong> Owners and custodians are human roles with responsibility and duties. A system is a tool that performs a function; it cannot hold ownership or custodianship.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-20">
+                    <p class="font-semibold text-lg mb-4">20. According to the NIST risk management framework, what is the correct sequence of roles responsible for Step 1 (Categorization), Step 2 (Control Selection), and Step 3 (Control Implementation)?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-20', this, true)">A. Data owners, system owners, custodians</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-20', this, false)">B. Data processors, custodians, users</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-20', this, false)">C. Business owners, administrators, custodians</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-20', this, false)">D. System owners, business owners, administrators</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> The flow of responsibility is typically: Data owners perform high-level categorization. They delegate the selection of specific controls to system owners (who are responsible for the system). Custodians then perform the hands-on implementation of those controls.
+ ◦ <strong>Why other options are not correct:</strong> The other options list the roles in an incorrect order or assign responsibilities to the wrong roles (e.g., users are not responsible for implementing controls).
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-21">
+                    <p class="font-semibold text-lg mb-4">21. Which of the following data roles are typically found inside of a company instead of as a third-party contracting relationship? (Select all that apply.)</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-21', this, true)">A. Data owners</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-21', this, true)">B. Data controllers</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-21', this, true)">C. Data custodians</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-21', this, false)">D. Data processors</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: A, B, C.</strong><br><strong>Justification:</strong> Data owners, data controllers, and data custodians are foundational roles for data governance and management that are almost always filled by internal employees.
+ ◦ <strong>Why other options are not correct:</strong> The role of a data processor is very commonly outsourced to a third-party vendor that specializes in a particular service, like cloud hosting or payroll processing.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-22">
+                    <p class="font-semibold text-lg mb-4">22. Why is data location a significant concern for data owners, controllers, and custodians?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-22', this, false)">A. It prevents the data from being lost.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-22', this, true)">B. Geographic location may impact compliance requirements.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-22', this, false)">C. Geographic location may drive storage costs.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-22', this, false)">D. It ensures that the proper data custodian works with it.</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> Data residency is a major compliance issue. Many countries and regions have specific laws (like GDPR) that govern how and where citizens' data can be stored and processed. Violating these laws can lead to severe penalties.
+ ◦ <strong>Why other options are not correct:</strong> Data loss is prevented by backups and redundancy, not location. While location can affect cost, compliance is a much more significant legal and financial risk. Custodian assignment is a management decision, not dictated by physical location.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-23">
+                    <p class="font-semibold text-lg mb-4">23. Angela wants to implement data security controls that are part of NIST 800-53 security and privacy controls. As part of the process, she works to determine which controls are appropriate for her organization's business processes and data handling needs. What term best describes the action she has taken?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-23', this, true)">A. Scoping</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-23', this, false)">B. Bounds checking</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-23', this, false)">C. Data stewardship</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-23', this, false)">D. Tailoring</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Scoping is the process of reviewing a large control catalog (like NIST 800-53) and determining which controls are applicable and relevant to a particular system or organization.
+ ◦ <strong>Why other options are not correct:</strong> Tailoring is the subsequent step of modifying the scoped controls to fit the specific environment. Bounds checking is a programming concept to prevent buffer overflows. Data stewardship is a data governance role.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-24">
+                    <p class="font-semibold text-lg mb-4">24. Mikayla wants to identify data that should be classified that already exists in her environment. What type of tool is best suited to identifying data like Social Security numbers, credit card numbers, and similar well-understood data formats?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-24', this, false)">A. Manual searching</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-24', this, true)">B. A sensitive data scanning tool</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-24', this, false)">C. An asset metadata search tool</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-24', this, false)">D. A SOAR</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> Sensitive data scanning tools (also known as data discovery tools) are specifically designed to scan systems and repositories for patterns matching well-known formats like PII and credit card numbers.
+ ◦ <strong>Why other options are not correct:</strong> Manual searching is infeasible at scale. Metadata search tools look at tags and labels, not the content of the data itself. A SOAR platform is for automating incident response, not for data discovery.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-25">
+                    <p class="font-semibold text-lg mb-4">25. What does labeling data allow a DLP system to do?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-25', this, true)">A. The DLP system can detect labels and apply appropriate protections based on rules.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-25', this, false)">B. The DLP system can adjust labels based on changes in the classification scheme.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-25', this, false)">C. The DLP system can modify labels to permit requested actions.</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-25', this, false)">D. The DLP system can delete unlabeled data.</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Labels act as metadata that Data Loss Prevention (DLP) systems can read and understand. Based on a rule set, if the DLP sees a file labeled "Confidential," it can automatically enforce policies, such as blocking it from being emailed externally.
+ ◦ <strong>Why other options are not correct:</strong> DLP systems enforce policies based on labels; they do not typically change the labels themselves. Deleting unlabeled data would be a destructively disruptive action.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-26">
+                    <p class="font-semibold text-lg mb-4">26. Megan wants to prepare media to allow for its reuse in an environment operating at the same sensitivity level. Which of the following is the best option to meet her needs?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-26', this, true)">A. Clearing</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-26', this, false)">B. Erasing</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-26', this, false)">C. Purging</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-26', this, false)">D. Sanitization</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> Clearing removes data using techniques like overwriting to render it unrecoverable by simple means. This is the appropriate level of effort for reusing media within the same security context.
+ ◦ <strong>Why other options are not correct:</strong> Erasing is simply deleting a file, which is not secure. Purging and Sanitization are more robust methods (like degaussing or physical destruction) required when media is moved to a less secure environment or disposed of.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-27">
+                    <p class="font-semibold text-lg mb-4">27. Information maintained about an individual that can be used to distinguish or trace their identity is known as what type of information?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-27', this, true)">A. Personally identifiable information (PII)</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-27', this, false)">B. Personal health information (PHI)</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-27', this, false)">C. Social Security number (SSN)</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-27', this, false)">D. Secure identity information (SII)</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: A.</strong><br><strong>Justification:</strong> This is the textbook definition of Personally Identifiable Information (PII). It is the broad category that encompasses any information linkable to a specific individual.
+ ◦ <strong>Why other options are not correct:</strong> PHI and SSN are specific *examples* of PII, but PII is the correct general term. Secure identity information (SII) is not a standard industry term.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-28">
+                    <p class="font-semibold text-lg mb-4">28. Which of the following information security risks to data at rest would result in the greatest reputational impact on an organization?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-28', this, false)">A. Improper classification</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-28', this, true)">B. Data breach</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-28', this, false)">C. Decryption</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-28', this, false)">D. An intentional insider threat</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: B.</strong><br><strong>Justification:</strong> A data breach is the confirmed, unauthorized disclosure of sensitive information to the public or an adversary. This event directly impacts customers and the public, leading to the most severe and immediate reputational damage.
+ ◦ <strong>Why other options are not correct:</strong> Improper classification, decryption, and insider threats are all vulnerabilities or actions that can *lead* to a breach, but the breach itself is the ultimate event that causes the reputational harm.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-29">
+                    <p class="font-semibold text-lg mb-4">29. The company that Katie works for provides its staff with mobile phones for employee use, with new phones issued every two years. What scenario best describes this type of practice when the phones themselves are still usable and receiving operating system updates?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-29', this, false)">A. EOL</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-29', this, false)">B. Planned obsolescence</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-29', this, true)">C. EOS</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-29', this, false)">D. Device risk management</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> This describes an End-of-Support (EOS) policy set by the company. The device is not at its End-of-Life (EOL) from the manufacturer, but the company has chosen to end its internal support for that model as part of its refresh cycle.
+ ◦ <strong>Why other options are not correct:</strong> EOL (End of Life) means the product is no longer manufactured or sold. Planned obsolescence is a design strategy, not a support policy. Device risk management is a process, not a specific state like EOS.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md quiz-container" id="dom2-quiz-30">
+                    <p class="font-semibold text-lg mb-4">30. Which of the following is the least effective method of removing data from media?</p>
+                    <div class="space-y-2">
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-30', this, false)">A. Degaussing</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-30', this, false)">B. Purging</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-30', this, true)">C. Erasing</button>
+                        <button class="quiz-option block w-full text-left p-3 rounded-md border border-slate-300 hover:bg-slate-100" onclick="checkQuizAnswer('dom2-quiz-30', this, false)">D. Clearing</button>
+                    </div>
+                    <div class="quiz-feedback mt-4 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
+                        <strong class="font-bold">Answer: C.</strong><br><strong>Justification:</strong> Erasing, or standard file deletion, is the least effective because it only removes the pointer to the data in the file allocation table, leaving the actual data on the disk until it is overwritten. The data is easily recoverable with common software tools.
+ ◦ <strong>Why other options are not correct:</strong> Clearing, purging, and degaussing are all formal, secure data sanitization methods. Clearing overwrites the data. Purging uses more advanced techniques like degaussing. Degaussing destroys data on magnetic media using a strong magnetic field.
+                    </div>
+                </div>
+					
             </section>
 
         </main>
